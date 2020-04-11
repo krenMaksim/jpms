@@ -1,13 +1,11 @@
 package com.kren.jpms.app;
 
-import com.google.common.base.Joiner;
+import com.kren.jpms.service.api.BussinesLogicService;
 
 class AppMain {
 
     public static void main(String[] args) {
-        Joiner joiner = Joiner.on("; ")
-                              .skipNulls();
-
-        System.out.println("Hello world! " + joiner.join("Harry", null, "Ron", "Hermione"));
+        BussinesLogicService bls = new BussinesLogicService();
+        bls.doSomething();
     }
 }

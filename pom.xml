@@ -9,7 +9,8 @@
 	<packaging>pom</packaging>
 
 	<modules>
-		<module>app</module>		
+		<module>app</module>
+        <module>service</module>		
 	</modules>
 
 	<properties>

@@ -1,3 +1,3 @@
 module jpms.app {
-    requires com.google.common;
+    requires jpms.service;
 }
