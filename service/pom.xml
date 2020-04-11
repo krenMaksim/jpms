@@ -9,5 +9,13 @@
 		<version>${project.version}</version>
 	</parent>
 
-	<artifactId>service</artifactId>	
+	<artifactId>service</artifactId>
+	
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+	</dependencies>
 </project>
