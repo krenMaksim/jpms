@@ -1,8 +1,6 @@
 module jpms.app {
-    requires jpms.service;
+    opens com.kren.jpms.app.spring;
 
-    requires spring.context;
+    requires jpms.service;
     requires spring.core;
-    
-    opens com.kren.jpms.app.spring to spring.core, spring.beans, spring.context;
 }
