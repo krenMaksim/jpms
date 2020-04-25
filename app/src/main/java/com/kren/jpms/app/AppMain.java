@@ -1,11 +1,10 @@
 package com.kren.jpms.app;
 
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
 import com.kren.jpms.app.spring.AppConfig;
 import com.kren.jpms.service.BussinesLogicService;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-class AppMain {
+public class AppMain {
 
     @SuppressWarnings("resource")
     public static void main(String[] args) {

@@ -3,4 +3,5 @@ module jpms.app {
 
     requires jpms.service;
     requires spring.core;
+    requires spring.context;
 }

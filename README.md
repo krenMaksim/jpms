@@ -1,2 +1,4 @@
 # jpms
-`$ java -cp app-with-dependencies.jar com.kren.jpms.app.AppMain`
+`$ java -cp app-0.0.1-SNAPSHOT.jar com.kren.jpms.app.AppMain`
+OR
+`$ java -jar app-0.0.1-SNAPSHOT.jar`

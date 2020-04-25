@@ -11,6 +11,7 @@
 	<modules>
 		<module>app</module>
         <module>service</module>		
+        <module>service-blackbox</module>		
 	</modules>
 
 	<properties>

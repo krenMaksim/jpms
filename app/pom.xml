@@ -10,7 +10,7 @@
 	</parent>
 
 	<artifactId>app</artifactId>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
@@ -18,30 +18,47 @@
 			<version>${project.version}</version>
 		</dependency>
 	</dependencies>
-	
+
 	<build>
 		<plugins>
+			<!--approach with libs inside jar. It might be unpossible or custom classloader should be written as well
+			 https://stackoverflow.com/questions/574594/how-can-i-create-an-executable-jar-with-dependencies-using-maven/4323501#4323501 -->
+			
+			<!--This approach suits more for JPMS investigation
+			https://mkyong.com/maven/how-to-create-a-jar-file-with-maven/ -->
+			<!-- Make this jar executable -->
 			<plugin>
-				<artifactId>maven-assembly-plugin</artifactId>
-				<version>3.1.0</version>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
 				<configuration>
-					<descriptorRefs>
-						<descriptorRef>jar-with-dependencies</descriptorRef>
-					</descriptorRefs>
-					<finalName>app-with-dependencies</finalName>
-					<appendAssemblyId>false</appendAssemblyId>					
+				  <archive>
+				    <manifest>
+					<addClasspath>true</addClasspath>
+					<mainClass>com.kren.jpms.app.AppMain</mainClass>
+					<classpathPrefix>dependency-jars/</classpathPrefix>
+				    </manifest>
+				  </archive>
 				</configuration>
+			</plugin>
 
+			<!-- Copy project dependency -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>3.1.2</version>
 				<executions>
-					<execution>
-						<id>make-assembly</id>
-						<phase>package</phase>
-						<goals>
-							<goal>single</goal>
-						</goals>
-					</execution>
+				  <execution>
+					<id>copy-dependencies</id>
+					<phase>package</phase>
+					<goals>
+						<goal>copy-dependencies</goal>
+					</goals>
+					<configuration>
+					  <outputDirectory>${project.build.directory}/dependency-jars/</outputDirectory>
+					</configuration>
+				  </execution>
 				</executions>
-			</plugin>			
+			</plugin>
 		</plugins>
 	</build>
 </project>
