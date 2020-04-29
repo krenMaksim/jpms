@@ -12,6 +12,7 @@
 		<module>app</module>
         <module>service</module>		
         <module>service-blackbox</module>		
+        <module>service-test</module>		
 	</modules>
 
 	<properties>
@@ -62,6 +63,10 @@
 			<plugin>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>${maven.surefire.plugin.version}</version>
+				<configuration>
+					<!--  http://maven.apache.org/surefire/maven-surefire-plugin/examples/junit.html take a look -->
+					<argLine> --scan-modules jpms.service</argLine>
+				</configuration>
 			</plugin>
 			<plugin>
 				<artifactId>maven-failsafe-plugin</artifactId>
