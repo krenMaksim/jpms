@@ -1,2 +1,2 @@
 ### Executing module
-` java --module-path . -m com.kren.standalone.app/com.kren.standalone.app.AppMain `
+` java --module-path ./lib:. -m com.kren.standalone.app/com.kren.standalone.app.AppMain `
