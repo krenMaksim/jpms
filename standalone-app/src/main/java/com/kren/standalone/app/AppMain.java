@@ -5,10 +5,14 @@ import com.kren.standalone.app.spring.AppConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class AppMain {
-    @SuppressWarnings("resource")
     public static void main(String[] args) {
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
-        SimpleService ss = context.getBean(SimpleService.class);
+        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
+        ctx.register(AppConfig.class);
+        ctx.refresh();
+
+        SimpleService ss = ctx.getBean(SimpleService.class);
         ss.doSomething();
+
+        ctx.close();
     }
 }
