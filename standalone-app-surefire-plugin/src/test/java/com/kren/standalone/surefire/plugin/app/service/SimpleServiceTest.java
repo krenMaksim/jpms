@@ -1,6 +1,5 @@
-package com.kren.standalone.surefire.plugin.app.service_test;
+package com.kren.standalone.surefire.plugin.app.service;
 
-import com.kren.standalone.surefire.plugin.app.service.SimpleService;
 import com.kren.standalone.surefire.plugin.app.spring.AppConfig;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

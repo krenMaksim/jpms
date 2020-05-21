@@ -46,8 +46,7 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>3.0.0-M4</version>
 				<configuration>
-					<argLine>--add-opens
-						com.kren.standalone.surefire.plugin.app/com.kren.standalone.surefire.plugin.app.service_test=spring.core</argLine>
+					<!-- <argLine> -->
 				</configuration>
 			</plugin>
 			<plugin>
