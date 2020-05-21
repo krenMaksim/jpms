@@ -30,17 +30,4 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	
-	<build>
-		<plugins>
-			<plugin>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>${maven.surefire.plugin.version}</version>
-				<configuration>
-					<argLine>--add-opens
-						jpms.service/com.kren.jpms.service.impl_test=spring.core</argLine>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
 </project>

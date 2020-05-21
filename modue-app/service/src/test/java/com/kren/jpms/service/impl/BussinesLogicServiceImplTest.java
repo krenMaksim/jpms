@@ -1,4 +1,4 @@
-package com.kren.jpms.service.impl_test;
+package com.kren.jpms.service.impl;
 
 import com.kren.jpms.service.BussinesLogicService;
 import com.kren.jpms.service.spring.ServiceConfig;
