@@ -1,0 +1,50 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>${project.groupId}</groupId>
+	<artifactId>module-app</artifactId>
+	<version>${project.version}</version>
+	<packaging>pom</packaging>
+
+	<modules>
+		<module>app</module>
+		<module>service</module>
+	</modules>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.version>0.0.1-SNAPSHOT</project.version>
+		<project.groupId>com.kren.jpms</project.groupId>
+
+		<java.version>11</java.version>
+
+		<spring.version>5.2.0.RELEASE</spring.version>
+		<guava.version>28.2-jre</guava.version>
+
+		<junit.version>5.5.2</junit.version>
+		<maven.surefire.plugin.version>3.0.0-M4</maven.surefire.plugin.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.0</version>
+				<configuration>
+					<release>${java.version}</release>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
